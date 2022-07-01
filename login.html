@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+
+    var contador = 1;
+    var maxContador = 3;
+
+    while (contador <= maxContador) {
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+        
+            if(loginInformado == loginCadastrado && senhaInformada == senhaCadastrada) {
+                alert("Bem-vindo ao sistema " + loginInformado);
+                contador = maxContador;
+            }else{
+                if(contador == 3) {
+                    alert ("Senha Bloqueada, entre em contato com o suporte");
+                }else
+                alert("Login inválido, tente novamente");
+            }
+            contador++; // esse aqui sempre vai somar mais 1, sempre ao rodar o while, independente de estar correto ou não o login (observar que se o login/senha estiver correto ele matará o while, pois soma-se 3 + 1, caindo fora do while)
+        }
+
+
+</script>

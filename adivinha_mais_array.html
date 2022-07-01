@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<!--MUNDO HTML -->
+<input/>                                    
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    
+    
+    var segredos = [5,7,10,2,3];                        // array é uma coleção de elementos na variável
+
+    var input = document.querySelector("input");         // cria uma varíavel sobre o "input" do mundo html, linha 3)
+    input.focus();                                      // deixa o cursor piscando no input ao carregar a página
+
+    var button = document.querySelector("button");       // cria uma varíavel sobre o "button" do mundo html, linha 4)
+
+
+
+    function verifica() {
+
+    var achou = false;                                  // usada para pular o alert caso o usuário acerte
+
+    for(var posicao = 0; posicao < segredos.length; posicao++) {   // primeiro ítem da array é 0
+
+        if(input.value == segredos[posicao]) {                     // se valor digitado no input for igual ao segredo [posição atual]
+
+            alert("Você ACERTOU!");                                // então gera o alert, troca a var achou por True e breca o if
+            achou = true;
+            break;
+        }
+    }
+
+    if(achou == false) {                                          // se achou continuar false após rodar o if, vai alertar
+        alert("Você ERROU!");
+    }
+
+    input.value = "";                                              // limpa o campo input
+    input.focus();                                               // deixa o cursor piscando no input ao carregar a página
+
+    }
+
+    
+    button.onclick = verifica;                                  // ao clicar no button, o JavaScript executa a function verifica(). Se fosse button.onclick = verifica(), carregaria a function ao carregar o programa, e não ao clicar.
+
+</script>

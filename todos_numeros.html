@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var primeiroNumero = 30;
+    var ultimoNumero = 40;
+
+    while (primeiroNumero <= ultimoNumero) {
+        if(primeiroNumero == 33 || primeiroNumero == 37){
+            primeiroNumero = primeiroNumero + 1;
+        } else {
+            mostra(primeiroNumero);
+            primeiroNumero = primeiroNumero +1;
+        }
+    }
+
+    mostra("FIM");
+
+
+
+</script>

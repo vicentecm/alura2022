@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    anoCopa = 1930;
+    anoAtual = 2022;
+    qtdeCopas = 1;
+
+    while (anoCopa <= anoAtual) {
+        mostra("Teve Copa do Mundo em "+ anoCopa);
+        anoCopa = anoCopa + 4;
+        qtdeCopas = qtdeCopas + 1;
+    }
+
+    mostra("Neste período de " + (anoAtual - 1930) + " anos, ocorreram " + qtdeCopas + " copas.");
+    mostra ("FIM");
+
+
+
+
+
+</script>

@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+	
+
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+	function pulaLinha() {
+		document.write("<br>");
+	}
+
+	var anoAtual = 2022;
+	var mediaGeracao=28; // idade média dos casais, quando têm o 1° filho
+	var anoDescobrimentoBrasil = 1500;
+	var geracoesAteAnoAtual = ((anoAtual - anoDescobrimentoBrasil)/mediaGeracao);
+
+	mostra("Desde o descobrimento do Brasil, já se passaram " + Math.round(geracoesAteAnoAtual) + " gerações.");
+
+
+</script>

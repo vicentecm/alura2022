@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<!--MUNDO HTML -->
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+    function sorteia() {                                 // atalho para sortear um número inteiro de 0 a 10.
+
+       return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumeros(quantidade) {                   // sortear(nro. de vezes)
+
+        var segredos = [];                                  // variável interna. (array)
+
+        var numero = 1;                                     // cria o primeiro espaço para o número sorteado
+
+        while(numero <= quantidade) {                       // repita se numero for <= quantidade (numero de vezes a sortear)
+
+              var numeroAleatorio = sorteia();              // var numeroAleatório = chama function sorteia()
+              var achou = false;
+
+              if (numeroAleatorio !== 0) {                                         // se numero sorteado for diferente de 0 é para:
+                     for(var posicao = 0; posicao < segredos.length; posicao++) {  // enquanto posição for <= nro de itens segredos
+
+                           if(segredos[posicao] == numeroAleatorio){                // se segredos [rodará posição por posição] for igual a númeroAleatorio sorteado, transforma a var achou em true e breca o if
+                                achou = true;
+                                break;
+                           }
+
+                     }
+
+                     if (achou == false) {
+                           segredos.push(numeroAleatorio);
+                           numero++;
+                     }
+              }
+
+        }
+
+        return segredos;
+
+    }
+
+    var segredos = sorteiaNumeros(3);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>

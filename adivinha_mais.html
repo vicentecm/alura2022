@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<!--OBSERVAR QUE INPUT E BUTTON SÃO DO MUNDO HTML-->
+<input/>
+
+<button>Compare com o meu segredo</button>
+
+<script>
+	
+	var segredo = Math.round(Math.random() *10);   // arredondar(numero aleatorio entre 0 e 1 *10)
+	var input = document.querySelector("input");   // cria uma varíavel sobre o "input" do mundo html, linha 3)
+	var button = document.querySelector("button"); // cria uma varíavel sobre o "button" do mundo html, linha 5)
+
+	input.focus();  // deixa o cursor pronto para digitar
+	
+
+
+// puxa o valor digitado dentro do "input" (html), mas como uma função, que não é carregada automáticamente, somente quando chamá-la
+	function verifica() {                          
+		if (input.value == segredo) {         //valor digitado dentro do input html Não podemos passar simplesmente input, porque o input corresponde a TAG e queremos dessa TAG seu valor (value). Por isso passamos input.value.
+			alert("Você ACERTOU !!!");
+		} else {
+			alert("Você ERROU !!!");
+		}
+
+		input.focus();                      // deixa o cursor pronto para digitar novamente
+		input.value = "";                  // limpa o valor do input, para tentar novamente
+	}
+
+
+	
+	button.onclick = verifica;   // ao clicar no button, o JavaScript executa a function verifica(). Se fosse button.onclick = verifica(), carregaria a function ao carregar o programa, e não ao clicar.
+
+
+
+</script>
