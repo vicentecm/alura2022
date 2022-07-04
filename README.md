@@ -3,3 +3,5 @@
 testando pull no git
 
 teste 2
+
+teste local
